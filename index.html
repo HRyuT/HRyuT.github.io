@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex"> <!-- Google検索にインデックスされないように -->
+    <title>シンプルクリックゲーム</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        #game-container {
+            margin-top: 50px;
+        }
+        #target {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            cursor: pointer;
+        }
+        #score {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>シンプルクリックゲーム</h1>
+        <p>赤い円をクリックしてスコアを増やそう！</p>
+        <div id="score">スコア: 0</div>
+        <div id="target"></div>
+    </div>
+
+    <script>
+        let score = 0;
+        const target = document.getElementById('target');
+        const scoreDisplay = document.getElementById('score');
+
+        // ターゲットをランダムな位置に移動
+        function moveTarget() {
+            const maxX = window.innerWidth - 50;
+            const maxY = window.innerHeight - 50;
+            const newX = Math.random() * maxX;
+            const newY = Math.random() * maxY;
+            target.style.left = newX + 'px';
+            target.style.top = newY + 'px';
+        }
+
+        // クリック時の処理
+        target.addEventListener('click', () => {
+            score++;
+            scoreDisplay.textContent = `スコア: ${score}`;
+            moveTarget();
+        });
+
+        // 初回ターゲット位置設定
+        moveTarget();
+    </script>
+</body>
+</html>
