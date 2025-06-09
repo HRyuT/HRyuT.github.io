@@ -44,8 +44,12 @@ function create(){
     player = this.physics.add.sprite(240, 80, "player")
     player.scale = 0.1
     let staticGroup = this.physics.add.staticGroup();
-    staticGroup.create(D_WIDTH/2, D_HEIGHT-32, "ground")
-    	this.physics.add.collider(player, staticGroup)
+    staticGroup.create(100, D_HEIGHT-32, "ground")
+	    staticGroup.create(200, D_HEIGHT-32, "ground")
+		    staticGroup.create(300, D_HEIGHT-32, "ground")
+			    staticGroup.create(400, D_HEIGHT-32, "ground")
+							    staticGroup.create(600, D_HEIGHT-32, "ground")
+    this.physics.add.collider(player, staticGroup)
 }
 
 function update(){
