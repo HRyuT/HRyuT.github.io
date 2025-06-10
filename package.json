@@ -1,0 +1,25 @@
+{
+  "name": "phavuer-example-game",
+  "version": "2.0.0",
+  "author": "Laineus",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "phaser": "^3.70.0",
+    "phavuer": "^0.15.3",
+    "vue": "^3.3.13"
+  },
+  "devDependencies": {
+    "@rollup/plugin-replace": "^5.0.5",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "phaser-assets-loader": "^1.2.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vue-tsc": "^1.8.26"
+  }
+}
